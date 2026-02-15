@@ -1,0 +1,11 @@
+-- database: ./database.db
+
+SELECT * FROM SuperCars;
+
+-- When I executed all the data to the table the queries didnt save ):
+
+-- All SuperCars
+SELECT * FROM SuperCars;
+-- all bikes and the maker 
+SELECT Makers.Name,SuperCars.Model FROM SuperCars
+JOIN Makers ON Makers.MakerID=Bikes.MakerID;
