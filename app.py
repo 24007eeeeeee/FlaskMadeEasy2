@@ -28,11 +28,17 @@ def query_db(query, args=(), one=False):
 @app.route('/')
 def home():
     #home page- just the ID, Maker, Model and Image URL
-    sql = "SELECT * FROM SuperCars;"
+    sql = """ 
+                SELECT SuperCars.SuperCarID,Makers.Name,SuperCars.Model,SuperCars.ImageURL
+                FROM SuperCars
+                JOIN Makers ON Makers.MakerID=SuperCars.MakerID;"""
     results = query_db(sql)
     return str(results)
     
-
+@app.route("/supercar/<int:id>)")
+def supercar(id):
+    #just one bike based on the id
+    pass
 
 if __name__ == "__main__":
     app.run(debug=True)

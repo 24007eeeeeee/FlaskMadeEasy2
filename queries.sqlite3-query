@@ -6,6 +6,20 @@ SELECT * FROM SuperCars;
 
 -- All SuperCars
 SELECT * FROM SuperCars;
--- all bikes and the maker 
+-- all SuperCars and the maker 
 SELECT Makers.Name,SuperCars.Model FROM SuperCars
-JOIN Makers ON Makers.MakerID=Bikes.MakerID;
+JOIN Makers ON Makers.MakerID=SuperCars.MakerID;
+
+--SuperCars of one make
+SELECT SuperCars.Model FROM SuperCars
+JOIN Makers ON Makers.MakerID=SuperCars.MakerID
+WHERE Maker.Name="Ferrari";
+
+--just id, maker, model and imageurl
+SELECT SuperCars.SuperCarID,Makers.Name,SuperCars.Model,SuperCarID.ImageURL
+FROM SuperCars
+JOIN Makers ON Makers.MakerID=SuperCars.MakerID;
+
+--just one bike based on id
+
+8:29 youtube
