@@ -4,11 +4,13 @@
  <!-- a 3 column grid -->
   <div class="three-column">
     {% for supercar in results %}
-    <div class="w3-card-4">
-        <!-- thename then the image -->
-         <h1>{{ supercar[1] }} {{ supercar[2] }}</h1>
-         <img src="{{ supercar[3] }}" alt ="{{ supercar[2] }}">
-    </div>
+    <a href="{{ url_for('supercar',id=supercar[0]) }}">
+        <div class="w3-card-4">
+            <!-- thename then the image -->
+            <h1>{{ supercar[1] }} {{ supercar[2] }}</h1>
+            <img src="{{ supercar[3] }}" alt ="{{ supercar[2] }}">
+         </div>
+     </a>
     {% endfor %}
   </div>
  {% endblock %}

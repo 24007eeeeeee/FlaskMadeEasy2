@@ -1,10 +1,16 @@
 {% extends "layout.html" %}
 {% block body %}
-<!-- Just one bike! -->
+<!-- Just one supercar! -->
   <!-- two column grid -->
    <div class="two column">
        <!--image on the left-->
        <img src="{{ supercar[6] }}" alt="{{ supercar[2] }}">
-
+       <!-- info panel -->
+       <div class="info">
+           <h1>Top Speed: {{ supercar[3] }}mph</h1>
+           <h1>Cost: ${{ supercar[4] }}</h1>
+           <h1>Description</h1>
+           <h1>{{ supercar[5] }}</h1>
+       </div>
    </div>
 {% endblock %}
