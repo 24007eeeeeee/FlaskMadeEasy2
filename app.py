@@ -33,7 +33,7 @@ def home():
                 FROM SuperCars
                 JOIN Makers ON Makers.MakerID=SuperCars.MakerID;"""
     results = query_db(sql)
-    return render_template("layout.html")
+    return render_template("home.html",results=results)
     
 @app.route("/supercar/<int:id>")
 def supercar(id):
@@ -42,7 +42,7 @@ def supercar(id):
     JOIN Makers ON Makers.MakerID=SuperCars.MakerID
     WHERE SuperCars.SuperCarID = ?;"""
     result = query_db(sql,(id,),True)
-    return str(result)
+    return render_template("supercar.html", supercar=result)
 
 if __name__ == "__main__":
     app.run(debug=True)
